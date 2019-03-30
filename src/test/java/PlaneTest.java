@@ -20,5 +20,12 @@ public class PlaneTest {
     }
 
     @Test
-    public void can
+    public void canGetAirline(){
+        assertEquals(Airline.BA, plane.getAirline());
+    }
+
+    @Test
+    public void passengersStartsEmpty(){
+        assertEquals(0, plane.passengerCount());
+    }
 }

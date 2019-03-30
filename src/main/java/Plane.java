@@ -16,4 +16,12 @@ public class Plane {
     public PlaneModel getModel() {
         return this.model;
     }
+
+    public Airline getAirline() {
+        return this.airline;
+    }
+
+    public int passengerCount() {
+        return this.passengers.size();
+    }
 }
