@@ -8,8 +8,10 @@ public class FlightTest {
 
     @Before
     public void before(){
-        this.plane = new Plane(PlaneModel.BOEING747, Airline.AF);
-
-        this.flight = new Flight(plane, 24, )
+        plane = new Plane(PlaneModel.BOEING747, Airline.AF);
+        EDI = new Airport(AirportCode.EDI);
+        flight = new Flight(plane, 24, EDI);
     }
+
+    
 }

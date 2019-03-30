@@ -19,7 +19,7 @@ public enum AirportCode {
         this.name = name;
         this.country = country;
     }
-    
+
     public String getName(){
         return this.name;
     }
