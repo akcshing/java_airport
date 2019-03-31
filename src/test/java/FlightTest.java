@@ -1,4 +1,7 @@
 import org.junit.Before;
+import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
 
 public class FlightTest {
 
@@ -13,5 +16,20 @@ public class FlightTest {
         flight = new Flight(plane, 24, EDI);
     }
 
-    
+    @Test
+    public void canGetPlane(){
+        assertEquals(plane, flight.getPlane());
+    }
+
+    @Test
+    public void canGetFlightNumber(){
+        assertEquals(24, flight.getNumber());
+    }
+
+    @Test
+    public void canGetAirport(){
+        assertEquals(EDI, flight.getDestination());
+    }
+
+
 }

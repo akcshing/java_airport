@@ -12,5 +12,15 @@ public class Flight {
         this.destination = destination;
     }
 
+    public Plane getPlane(){
+        return this.plane;
+    }
 
+    public int getNumber(){
+        return this.number;
+    }
+
+    public Airport getDestination(){
+        return this.destination;
+    }
 }
