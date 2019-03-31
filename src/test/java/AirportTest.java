@@ -39,6 +39,15 @@ public class AirportTest {
         assertEquals(0, airportHK.getFlights().size());
         airportHK.createFlight(plane,1, airportSF);
         assertEquals(1, airportHK.getFlights().size());
+    }
 
+    @Test
+    public void canSellTickets(){
+        airportHK.addPlane(plane);
+        airportHK.createFlight(plane,1, airportSF);
+        airportHK.sellTicket(1);
+        assertEquals(1, airportHK.getFlights().size());
+        Flight flight = airportHK.getFlight(1);
+        assertEquals(329, flight.getTicketsAvailable());
     }
 }

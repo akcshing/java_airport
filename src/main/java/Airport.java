@@ -1,15 +1,19 @@
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class Airport {
 
     private AirportCode code;
     private ArrayList<Plane> hangar;
-    private ArrayList<Flight> flights;
+    private HashMap<Integer, Flight> flights;
+//    private HashMap<Integer, Integer> tickets;
+
 
     public Airport(AirportCode code){
         this.code = code;
         this.hangar = new ArrayList<>();
-        this.flights = new ArrayList<>();
+        this.flights = new HashMap<>();
+//        this.tickets = new HashMap<>();
     }
 
     public AirportCode getCode(){
@@ -24,13 +28,22 @@ public class Airport {
         this.hangar.add(plane);
     }
 
-    public ArrayList<Flight> getFlights(){
+    public HashMap getFlights(){
         return this.flights;
+    }
+
+    public Flight getFlight(int flightNumber){
+        return this.flights.get(flightNumber);
     }
 
     public void createFlight(Plane plane, int flightNumber, Airport destination){
         if (this.hangar.contains(plane)){
-            this.flights.add(new Flight(plane, flightNumber, destination));
+            this.flights.put(flightNumber, (new Flight(plane, flightNumber, destination)));
         }
+    }
+
+    public void sellTicket(int flightNumber){
+        Flight flight = this.flights.get(flightNumber);
+        flight.sellTicket();
     }
 }

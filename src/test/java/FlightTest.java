@@ -31,5 +31,8 @@ public class FlightTest {
         assertEquals(EDI, flight.getDestination());
     }
 
-
+    @Test
+    public void canGetTicketsAvailable(){
+        assertEquals(605, flight.getTicketsAvailable());
+    }
 }
